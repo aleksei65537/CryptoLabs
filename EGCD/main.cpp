@@ -3,8 +3,8 @@
 #include <string>
 
 int main() {
-    long                a;
-    long                b;
+    long a;
+    long b;
 
     std::cout << ">>> Enter a: ";
     std::cin >> a;
@@ -14,12 +14,12 @@ int main() {
 
     EGCD e(a, b);
 
-    std::cout << ">>> GCD equal to " << e.d << ", s equal to " << e.s << 
+    std::cout << ">>> GCD equal to " << e.d << ", s equal to " << e.s <<
         ", t equal to " << e.t << std::endl;
 
     std::cout << ">>> Resulting equation: ";
 
-    std::cout << e.s << " * " << a << " + " << e.t << " * " << b << " = " 
+    std::cout << e.s << " * " << a << " + " << e.t << " * " << b << " = "
         << e.d << std::endl;
 
     return 0;

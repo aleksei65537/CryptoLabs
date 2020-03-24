@@ -14,7 +14,7 @@ class Vigenere {
     char get_rel_code(const char c);
 
     char get_abs_code(const char c);
-    
+
     public:
 
         Vigenere() = delete;
@@ -43,7 +43,7 @@ class Vigenere {
 
 inline
 char Vigenere::get_rel_code(const char c) {
-    return std::toupper(c) - 'A';    
+    return std::toupper(c) - 'A';
 }
 
 inline

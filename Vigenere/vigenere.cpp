@@ -1,39 +1,33 @@
 #include "vigenere.hpp"
 
 void Vigenere::add_chiper_char(std::string& s, const char m, const char k) {
-    
     bool lower = false;
-    
+
     if (std::islower(m)) {
-       lower = true; 
-    } 
-    
+       lower = true;
+    }
+
     s += (get_rel_code(m) + get_rel_code(k)) % 26;
-    
     s.back() = get_abs_code(s.back());
-    
+
     if(lower) {
         s.back() = std::tolower(s.back());
     }
-
 }
 
 void Vigenere::add_dechiper_char(std::string& s, const char c, const char k) {
-    
     bool lower = false;
-    
+
     if (std::islower(c)) {
-       lower = true; 
-    } 
-    
+       lower = true;
+    }
+
     s += (get_rel_code(c) + 26 - get_rel_code(k)) % 26;
-    
     s.back() = get_abs_code(s.back());
-    
+
     if(lower) {
         s.back() = std::tolower(s.back());
     }
-
 }
 
 std::string Vigenere::encrypt(const std::string& message) {
@@ -50,10 +44,7 @@ std::string Vigenere::encrypt(const std::string& message) {
         else {
             chipertext += message[i];
         }
-
-
     }
-
     return chipertext;
 }
 
@@ -71,9 +62,6 @@ std::string Vigenere::decrypt(const std::string& chipertext) {
         else {
             message += chipertext[i];
         }
-
-
     }
-
     return message;
 }

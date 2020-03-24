@@ -1,6 +1,3 @@
-//  Пример можно посмотреть здесь
-//  https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Example
-
 #include "EGCD.hpp"
 #include <cstdlib>
 
@@ -9,7 +6,6 @@ void swap(EGCD::DataField& first, EGCD::DataField& second) {
     first = second;
     second = tmp;
 }
-
 
 EGCD::EGCD(long a, long b)
     : table_{[0] = {a, 0, 1, 0}, [1] = {b, 0, 0, 1}} {
@@ -23,14 +19,12 @@ EGCD::EGCD(long a, long b)
         return;
 
     } else {
- 
-        long r =        a % b;
-        long q =        a / b;
-        long s =        table_[0].s - q * table_[1].s;
-        long t =        table_[0].t - q * table_[1].t;
+        long r = a % b;
+        long q = a / b;
+        long s = table_[0].s - q * table_[1].s;
+        long t = table_[0].t - q * table_[1].t;
 
         while (r != 0) {
-
             swap(table_[0], table_[1]);
             table_[1] = {r, q, s, t};
 

@@ -8,7 +8,7 @@ int main() {
     std::string key;
 
     while(true) {
-        std::cout << 
+        std::cout <<
             ">>> Choose operation: encrypt (e), decrypt (d) or exit (q): ";
         std::getline(std::cin, answer);
 
@@ -17,7 +17,7 @@ int main() {
             std::getline(std::cin, message);
             std::cout << ">>> Enter a key: ";
             std::getline(std::cin, key);
-            std::cout << ">>> Your encrypted message: " << 
+            std::cout << ">>> Your encrypted message: " <<
                 Vigenere(key).encrypt(message) << std::endl;
             std::cout << ">>> (Press enter to continue)";
             std::cin.get();
@@ -28,7 +28,7 @@ int main() {
             std::getline(std::cin, message);
             std::cout << ">>> Enter a key: ";
             std::getline(std::cin, key);
-            std::cout << ">>> Your decrypted message: " << 
+            std::cout << ">>> Your decrypted message: " <<
                 Vigenere(key).decrypt(message) << std::endl;
             std::cout << ">>> (Press enter to continue)";
             std::cin.get();
