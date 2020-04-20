@@ -4,21 +4,15 @@
 #include <stdexcept>
 
 class Vigenere {
-
-    std::string key;
-
-    void add_chiper_char(std::string& s, const char m, const char k);
-
-    void add_dechiper_char(std::string& s, const char c, const char k);
-
-    char get_rel_code(const char c);
-
-    char get_abs_code(const char c);
+    private:
+        std::string key;
+        void add_chiper_char(std::string& s, const char m, const char k);
+        void add_dechiper_char(std::string& s, const char c, const char k);
+        char get_rel_code(const char c);
+        char get_abs_code(const char c);
 
     public:
-
         Vigenere() = delete;
-
         ~Vigenere() { }
 
         Vigenere(const std::string& key_) {
@@ -34,9 +28,7 @@ class Vigenere {
         }
 
         std::string encrypt(const std::string& message);
-
         std::string decrypt(const std::string& chipertext);
-
         void change_key(const std::string& key_) { key = key_; }
 
 };

@@ -40,7 +40,6 @@ std::string Vigenere::encrypt(const std::string& message) {
             add_chiper_char(chipertext, message[i], key[j % key.size()]);
             ++j;
         }
-
         else {
             chipertext += message[i];
         }
@@ -58,7 +57,6 @@ std::string Vigenere::decrypt(const std::string& chipertext) {
             add_dechiper_char(message, chipertext[i], key[j % key.size()]);
             ++j;
         }
-
         else {
             message += chipertext[i];
         }

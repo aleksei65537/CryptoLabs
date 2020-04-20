@@ -12,7 +12,7 @@ int main() {
     std::cout << ">>> Enter b: ";
     std::cin >> b;
 
-    EGCD e(a, b);
+    EGCD<long> e(a, b);
 
     std::cout << ">>> GCD equal to " << e.d << ", s equal to " << e.s <<
         ", t equal to " << e.t << std::endl;
