@@ -10,10 +10,10 @@ EGCD (расширенный алгоритм евклида) и Vigenere (ши�
 введите:
 
 ```console
-$ mkdir build
-$ cd build
-$ qmake ..
-$ make
+foo@bar:~$ mkdir build
+foo@bar:~$ cd build
+foo@bar:~$ qmake ..
+foo@bar:~$ make
 ```
 Компиляция может занять какое-то время
 
