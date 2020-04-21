@@ -3,7 +3,8 @@
 #include <string>
 #include <stdexcept>
 
-class Vigenere {
+class Vigenere 
+{
     private:
         std::string key;
         void add_chiper_char(std::string& s, const char m, const char k);
@@ -15,13 +16,18 @@ class Vigenere {
         Vigenere() = delete;
         ~Vigenere() { }
 
-        Vigenere(const std::string& key_) {
-            for (const auto& it: key_) {
-                if (!std::isalpha(it)) {
+        Vigenere(const std::string& key_) 
+        {
+            for (const auto& it: key_) 
+            {
+                if (!std::isalpha(it)) 
+                {
                     throw std::invalid_argument(
                             "Key must be an aplphabetic string"
                             );
-                } else {
+                }
+                else 
+                {
                     key = key_;
                 }
             }
@@ -34,7 +40,8 @@ class Vigenere {
 };
 
 inline
-char Vigenere::get_rel_code(const char c) {
+char Vigenere::get_rel_code(const char c) 
+{
     return std::toupper(c) - 'A';
 }
 

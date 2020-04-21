@@ -2,17 +2,20 @@
 #include <iostream>
 #include <string>
 
-int main() {
+int main() 
+{
     std::string answer;
     std::string message;
     std::string key;
 
-    while(true) {
+    while(true) 
+    {
         std::cout <<
             ">>> Choose operation: encrypt (e), decrypt (d) or exit (q): ";
         std::getline(std::cin, answer);
 
-        if (answer == "e") {
+        if (answer == "e") 
+        {
             std::cout << ">>> Enter a message for encryption: ";
             std::getline(std::cin, message);
             std::cout << ">>> Enter a key: ";
@@ -23,7 +26,8 @@ int main() {
             std::cin.get();
         }
 
-        if (answer == "d") {
+        if (answer == "d") 
+        {
             std::cout << ">>> Enter a message for decryption: ";
             std::getline(std::cin, message);
             std::cout << ">>> Enter a key: ";
@@ -35,11 +39,11 @@ int main() {
             std::cout << std::endl;
         }
 
-        if (answer == "q") {
+        if (answer == "q") 
+        {
             std::cout << ">>> Good Buy!" << std::endl;
             exit(0);
         }
-
         else continue;
     }
 

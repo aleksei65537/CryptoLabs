@@ -2,7 +2,8 @@
 #include <iostream>
 #include <string>
 
-int main() {
+int main() 
+{
     long a;
     long b;
 
