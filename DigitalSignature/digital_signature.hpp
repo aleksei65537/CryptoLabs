@@ -626,14 +626,12 @@ size_t RSA<key_size, T>::hex_to_size_t(char h) const
     }
 }
 
-// Calculate base64 character index
 template<size_t key_size, typename T>
 size_t RSA<key_size, T>::b64_to_size_t(char b) const
 {
     return b64_map.find(b);
 }
 
-// Encode hex to base64
 template<size_t key_size, typename T>
 std::string RSA<key_size, T>::hex_to_base64(const std::string& s) const
 {
