@@ -379,8 +379,8 @@ void RSA<key_size, T>::import_privkey_from_pem(std::istream& is)
         tmp.ends_with("-----ENDRSAPRIVATEKEY-----")) {
         std::string shex = base64_to_hex(tmp.substr(28, tmp.size() - 54));
         import_privkey_from_hex(shex);
-    } 
-    else 
+    }
+    else
     {
         throw std::invalid_argument("The key is corrupted (SIGNATURE)");
     }
@@ -816,8 +816,6 @@ T RSA<key_size, T>::decrypt(T m, bool use_priv_key)
         : boost::multiprecision::powm(m, this->public_exponent, this->modulus);
 }
 
-
-
 template <size_t key_size, typename T>
 std::string RSA<key_size, T>::decrypt(const std::string& chiper,
                                       bool use_priv_key)
@@ -849,7 +847,6 @@ std::string sign(const std::string& message, RSA<key_size, T>& rsa)
     std::string signatue = rsa.encrypt(hex, false);
     return signatue;
 }
-
 
 template <size_t key_size, typename T>
 bool verify(const std::string& message, const std::string& signature,
