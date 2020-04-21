@@ -176,7 +176,8 @@ size_t RSA<key_size, T>::get_asn1_len(const std::string& shex) const
     if (tag <= 0x7F)
     {
         len = tag;
-    } else
+    }
+    else
     {
             len = std::stoull(shex.substr(2, 2 * (tag - 0x80)), 0, 16);
     }
@@ -378,7 +379,9 @@ void RSA<key_size, T>::import_privkey_from_pem(std::istream& is)
         tmp.ends_with("-----ENDRSAPRIVATEKEY-----")) {
         std::string shex = base64_to_hex(tmp.substr(28, tmp.size() - 54));
         import_privkey_from_hex(shex);
-    } else {
+    } 
+    else 
+    {
         throw std::invalid_argument("The key is corrupted (SIGNATURE)");
     }
 }

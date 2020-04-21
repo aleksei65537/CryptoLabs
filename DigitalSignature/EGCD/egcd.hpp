@@ -2,6 +2,7 @@
 
 namespace ds 
 {
+
 template <typename T>
 class EGCD 
 {

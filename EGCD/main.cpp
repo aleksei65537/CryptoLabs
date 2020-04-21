@@ -1,4 +1,4 @@
-#include "EGCD.hpp"
+#include "egcd.hpp"
 #include <iostream>
 #include <string>
 
@@ -13,7 +13,7 @@ int main()
     std::cout << ">>> Enter b: ";
     std::cin >> b;
 
-    EGCD<long> e(a, b);
+    ds::EGCD<long> e(a, b);
 
     std::cout << ">>> GCD equal to " << e.d << ", s equal to " << e.s <<
         ", t equal to " << e.t << std::endl;
