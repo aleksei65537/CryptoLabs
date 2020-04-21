@@ -612,7 +612,6 @@ void RSA<key_size, T>::export_pubkey_to_pem(std::ostream& os) const
     os << "-----END RSA PUBLIC KEY-----" << std::endl;
 }
 
-// Calculate hex character index
 template<size_t key_size, typename T>
 size_t RSA<key_size, T>::hex_to_size_t(char h) const
 {
