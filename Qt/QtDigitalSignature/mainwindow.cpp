@@ -28,3 +28,13 @@ void MainWindow::on_pushButtonChooseVerify_clicked()
 {
     verify.show();
 }
+
+void MainWindow::on_pushButton_clicked()
+{
+    encrypt.show();
+}
+
+void MainWindow::on_pushButtonDecrypt_clicked()
+{
+    decrypt.show();
+}

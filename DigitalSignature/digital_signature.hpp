@@ -789,23 +789,23 @@ template <size_t key_size, typename T>
 std::string RSA<key_size, T>::encrypt(const std::string& message,
                                       bool use_pub_key)
 {
-        using boost::multiprecision::mpz_int;
-        std::string shex = hex_str(message);
-        std::stringstream ss;
-        T imessage;
-        ss << shex;
-        ss >> std::hex >> imessage;
-        T ichiper = use_pub_key == true
-        ? boost::multiprecision::powm(imessage, this->public_exponent,
-                                      this->modulus)
-        : boost::multiprecision::powm(imessage, this->private_exponent,
-                                      this->modulus);
-        ss.clear();
-        ss.str("");
-        std::string chiper;
-        ss << std::hex << ichiper;
-        ss >> chiper;
-        return hex_to_base64(chiper);
+    using boost::multiprecision::mpz_int;
+    std::string shex = hex_str(message);
+    std::stringstream ss;
+    T imessage;
+    ss << shex;
+    ss >> std::hex >> imessage;
+    T ichiper = use_pub_key == true
+    ? boost::multiprecision::powm(imessage, this->public_exponent,
+                                  this->modulus)
+    : boost::multiprecision::powm(imessage, this->private_exponent,
+                                  this->modulus);
+    ss.clear();
+    ss.str("");
+    std::string chiper;
+    ss << std::hex << ichiper;
+    ss >> chiper;
+    return hex_to_base64(chiper);
 }
 
 template <size_t key_size, typename T>
@@ -820,22 +820,24 @@ template <size_t key_size, typename T>
 std::string RSA<key_size, T>::decrypt(const std::string& chiper,
                                       bool use_priv_key)
 {
-        std::string shex = base64_to_hex(chiper);
-        std::stringstream ss;
-        T ichiper;
-        ss << shex;
-        ss >> std::hex >> ichiper;
-        T imessage = use_priv_key == true
-        ? boost::multiprecision::powm(ichiper, this->private_exponent,
-                                      this->modulus)
-        : boost::multiprecision::powm(ichiper, this->public_exponent,
-                                      this->modulus);
-        ss.clear();
-        ss.str("");
-        std::string message;
-        ss << imessage;
-        ss >> message;
-        return ascii_str(message);
+    std::string tmp = chiper;
+    tmp.erase(std::remove_if(tmp.begin(), tmp.end(), ::isspace), tmp.end());
+    std::string shex = base64_to_hex(tmp);
+    std::stringstream ss;
+    T ichiper;
+    ss << shex;
+    ss >> std::hex >> ichiper;
+    T imessage = use_priv_key == true
+    ? boost::multiprecision::powm(ichiper, this->private_exponent,
+                                  this->modulus)
+    : boost::multiprecision::powm(ichiper, this->public_exponent,
+                                  this->modulus);
+    ss.clear();
+    ss.str("");
+    std::string message;
+    ss << imessage;
+    ss >> message;
+    return ascii_str(message);
 }
 
 template <size_t key_size, typename T>
