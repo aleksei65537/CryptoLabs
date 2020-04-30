@@ -1,7 +1,6 @@
 #include "encrypt.h"
 #include "ui_encrypt.h"
 #include "DigitalSignature/digital_signature.hpp"
-#include <string>
 
 Encrypt::Encrypt(QWidget *parent) :
     QDialog(parent),

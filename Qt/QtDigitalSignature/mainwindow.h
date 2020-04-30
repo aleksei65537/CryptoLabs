@@ -5,8 +5,8 @@
 #include "generate.h"
 #include "signature.h"
 #include "verify.h"
-#include "encrypt.h"
 #include "decrypt.h"
+#include "encrypt.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -36,7 +36,7 @@ private:
     Generate generate;
     Signature signature;
     Verify verify;
-    Encrypt encrypt;
     Decrypt decrypt;
+    Encrypt encrypt;
 };
 #endif // MAINWINDOW_H
