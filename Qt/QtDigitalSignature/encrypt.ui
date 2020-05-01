@@ -21,7 +21,7 @@
        <item>
         <widget class="QLabel" name="label_2">
          <property name="text">
-          <string>Закрытый ключ</string>
+          <string>Открытый ключ</string>
          </property>
         </widget>
        </item>
